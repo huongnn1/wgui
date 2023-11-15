@@ -1,0 +1,7 @@
+[Unit]
+Description=WireGuard UI
+[Service]
+Type=simple
+ExecStart=/etc/wireguard/start-wgui.sh
+[Install]
+WantedBy=multi-user.target
