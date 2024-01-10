@@ -28,7 +28,7 @@ systemctl daemon-reload
 #Step 6: Update wireguard-ui
 echo "Updating source code wireguard-ui..."
 # chmod +x /etc/wireguard/update.sh
-# cd /etc/wireguard/
+cd /etc/wireguard/
 ./update.sh
 
 #Step 7: Enable - start services
