@@ -1,1 +1,0 @@
-https://kb.pavietnam.vn/huong-dan-cai-dat-wireguard-vpn-ui.html

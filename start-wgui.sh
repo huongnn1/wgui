@@ -1,2 +1,3 @@
 #!/bin/bash
-./etc/wireguard/wireguard-ui 192.168.0.135 0.0.0.0:5000
+IP_WAN=curl ifconfig.co
+./etc/wireguard/wireguard-ui $IP_WAN 0.0.0.0:5000
