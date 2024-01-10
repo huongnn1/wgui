@@ -1,4 +1,7 @@
 #!/bin/bash
+#Huong Nguyen 10/01/2024
+#Source wireguard-ui: https://github.com/ngoduykhanh/wireguard-ui
+IP_WAN=$(curl ifconfig.co)
 
 #Step 1: Update repository linux
 echo "------------Updating repository------------"
@@ -11,24 +14,26 @@ apt install wireguard -y
 #Step 3: Enable IP forwarding
 echo "------------Enable IP forwarding------------"
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
-echo "------------Done !!!------------"
 
-#Step 4: Git clone source
+#Step 4: Cloning source code
 echo "------------Cloning source code------------"
 cd /etc/wireguard/
 git clone https://github.com/huongnn1/wgui.git
+
+#Step 5: Moving to /etc/wireguard/
 echo "------------Moving source code to /etc/wireguard------------"
 mv /etc/wireguard/wgui/* /etc/wireguard/
+
+#Step 6: Set permission excute
 chmod +x -R /etc/wireguard/*
 
-#Step 5: Copy file to /etc/systemd/system/ then reload daemon
+#Step 7: Copy file services to /etc/systemd/system/ then reload daemon
 echo "------------Copying file services to /etc/sytemd/system/------------"
 cp /etc/wireguard/systemd/* /etc/systemd/system/
 systemctl daemon-reload
 
-#Step 6: Update wireguard-ui
+#Step 8: Update wireguard-ui
 echo "------------Updating source code wireguard-ui------------"
-# chmod +x /etc/wireguard/update.sh
 cd /etc/wireguard/
 ./update.sh
 echo "------------Done !!!------------"
@@ -40,3 +45,5 @@ echo "------------Enable services------------"
 systemctl enable wgui.{path,service} wg-quick@wg0.service wgui-web.service
 echo "------------Start services------------"
 systemctl start wgui.{path,service}
+echo "------------Start services------------"
+echo "-------Access URL: https://$IP_WAN:5000"
