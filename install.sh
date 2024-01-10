@@ -20,7 +20,8 @@ systemctl daemon-reload
 
 #Step 6: Update wireguard-ui
 chmod +x /etc/wireguard/update.sh
-./etc/wireguard/update.sh
+cd /etc/wireguard/
+./update.sh
 
 #Step 7: Enable - start services
 wg setconf wg0 /etc/wireguard/wg0.conf
