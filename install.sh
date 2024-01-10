@@ -13,7 +13,7 @@ echo "Enable IP forwarding..."
 echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 
 #Step 4: Git clone source
-echo "Cloing source code..."
+echo "Cloning source code..."
 cd /etc/wireguard/
 git clone https://github.com/huongnn1/wgui.git
 echo "Moving source code to /etc/wireguard..."
@@ -32,6 +32,6 @@ cd /etc/wireguard/
 ./update.sh
 
 #Step 7: Enable - start services
-# wg setconf wg0 /etc/wireguard/wg0.conf
+wg setconf wg0 /etc/wireguard/wg0.conf
 systemctl enable wgui.{path,service} wg-quick@wg0.service wgui-web.service
 systemctl start wgui.{path,service}
