@@ -40,7 +40,7 @@ echo "------------Done !!!------------"
 
 #Step 7: Enable - start services
 echo "------------Apply config wireguard------------"
-wg setconf wg0 /etc/wireguard/wg0.conf
+# wg setconf wg0 /etc/wireguard/wg0.conf
 echo "------------Enable services------------"
 systemctl enable wgui.{path,service} wg-quick@wg0.service wgui-web.service
 echo "------------Start services------------"
