@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Step 1: Update repository linux
-apt update & apt upgrade -y
+apt update
 
 #Step 2: Install wireguard
 apt install wireguard -y
@@ -12,7 +12,7 @@ echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 #Step 4: Git clone source
 cd /etc/wireguard/
 git clone https://github.com/huongnn1/wgui.git
-mv -r /etc/wireguard/wgui/* /etc/wireguard/
+mv /etc/wireguard/wgui/* /etc/wireguard/
 
 #Step 5: Copy file to /etc/systemd/system/ then reload daemon
 cp /etc/wireguard/systemd/* /etc/systemd/system/
