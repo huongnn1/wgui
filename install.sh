@@ -32,6 +32,6 @@ echo "Updating source code wireguard-ui..."
 ./update.sh
 
 #Step 7: Enable - start services
-wg setconf wg0 /etc/wireguard/wg0.conf
+# wg setconf wg0 /etc/wireguard/wg0.conf
 systemctl enable wgui.{path,service} wg-quick@wg0.service wgui-web.service
 systemctl start wgui.{path,service}
