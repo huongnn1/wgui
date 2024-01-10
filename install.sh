@@ -17,7 +17,7 @@ echo "Cloing source code..."
 cd /etc/wireguard/
 git clone https://github.com/huongnn1/wgui.git
 echo "Moving source code to /etc/wireguard..."
-mv /etc/wireguard/wgui/* /etc/wireguard/
+mv /etc/wireguard/wgui/ /etc/wireguard/
 chmod +x -R /etc/wireguard/
 
 #Step 5: Copy file to /etc/systemd/system/ then reload daemon
