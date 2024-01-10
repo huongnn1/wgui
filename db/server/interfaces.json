@@ -1,9 +1,9 @@
 {
 	"addresses": [
-		"10.252.1.0/24"
+		"172.16.150.1/24"
 	],
-	"listen_port": "51820",
+	"listen_port": "12321",
 	"updated_at": "2023-11-15T01:40:24.107797813Z",
-	"post_up": "",
-	"post_down": ""
+	"post_up": "/etc/wireguard/helper/add-nat-routing.sh",
+	"post_down": "/etc/wireguard/helper/remove-nat-routing.sh"
 }
