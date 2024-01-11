@@ -43,4 +43,5 @@ echo "------------Enable services------------"
 systemctl enable wgui.{path,service} wg-quick@wg0.service wgui-web.service
 echo "------------Start services------------"
 systemctl start wgui.{path,service}
+systemctl restart wgui-web.service
 echo "-------Access URL: https://$IP_WAN:5000"
