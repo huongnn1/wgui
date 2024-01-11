@@ -7,9 +7,9 @@ IP_WAN=$(curl ifconfig.co)
 echo "------------Updating repository------------"
 apt update
 
-#Step 2: Install wireguard
-echo "------------Installing wireguard------------"
-apt install wireguard -y
+#Step 2: Install git, wireguard
+echo "------------Installing git - wireguard------------"
+apt install git-all wireguard -y
 
 #Step 3: Enable IP forwarding
 echo "------------Enable IP forwarding------------"
