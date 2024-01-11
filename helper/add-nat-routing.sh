@@ -3,7 +3,7 @@ IPT="/sbin/iptables"
 
 IN_FACE=$(ip -o -4 route show to default | awk '{print $5}') # NIC connected to the internet                  
 WG_FACE="wg0"                    # WG NIC
-SUB_NET="172.16.150.0/24"        # WG IPv4 sub/net aka CIDR
+SUB_NET="10.252.1.0/24"        # WG IPv4 sub/net aka CIDR
 WG_PORT="51820"                  # WG udp port
 
 ## IPv4 ##
