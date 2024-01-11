@@ -1,2 +1,3 @@
+Huong Nguyen 10/01/2024
 A web user interface to manage your WireGuard setup
-source code: https://github.com/ngoduykhanh/wireguard-ui
+source wireguard-ui: https://github.com/ngoduykhanh/wireguard-ui
